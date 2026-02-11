@@ -8,6 +8,8 @@ public class TreasureChest : MonoBehaviour, IInteractable
     [SerializeField] private float launchForce = 5f;
 
     [Header("Visuals")]
+    [SerializeField] private Sprite openChestSprite;
+
     private SpriteRenderer sRend;
     private bool isOpened = false;
 
@@ -35,8 +37,8 @@ public class TreasureChest : MonoBehaviour, IInteractable
 
         for(int i = 0; i < gemcount; i++)
         {
-            GameObject gem = Instantiate(gemPrefab, transform.position, Quarternion.identity);
-            Rigidbody2D gemRB = gem.GetComponent<RigidBody2D>();
+            GameObject gem = Instantiate(gemPrefab, transform.position, Quaternion.identity);
+            Rigidbody2D gemRB = gem.GetComponent<Rigidbody2D>();
 
             if(gemRB != null)
             {
